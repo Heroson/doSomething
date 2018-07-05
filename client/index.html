@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+
+    <button v-on:click="request">请求</button>
+    <table>
+      <thead>
+        <th>ID</th>
+        <th>名称</th>
+        <th>地址</th>
+      </thead>
+      <tbody>
+        <tr v-for="c in customers">
+          <td>{{c.cust_id}}</td>
+          <td>{{c.cust_name}}</td>
+          <td>{{c.cust_address}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el: '#app',
+      data: {
+        'msg': 'hello',
+        'customers': []
+      },
+      methods: {
+        request: function(){
+          var self = this
+          var xhr = new XMLHttpRequest();
+          xhr.open('GET', 'http://127.0.0.1:3000/users', false)
+          xhr.onreadystatechange = function() {
+            if(xhr.readyState == 4 && xhr.status == 200){
+              const res = JSON.parse(xhr.responseText)
+              console.log(res.data)
+              self.customers = res.data
+            }
+          }
+          xhr.send(null)
+        }
+      }
+    })
+  </script>
+</body>
+</html>
