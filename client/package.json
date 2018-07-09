@@ -1,0 +1,14 @@
+{
+  "name": "do-something-client",
+  "version": "0.0.1",
+  "description": "A client for doSomething.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot --env.dev"
+  },
+  "author": "bytez",
+  "license": "ISC",
+  "dependencies": {
+    "element-ui": "^2.4.3"
+  }
+}
