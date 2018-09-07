@@ -7,9 +7,11 @@ module.exports = {
     app: './src/index.js'
   },
   module: {
+    // noParse: /node_modules/, //不解析
     rules: [
       { 
         test: /\.css$/,
+        exclude: /node_modules/,
         use: [
           'style-loader',
           'css-loader'
@@ -22,6 +24,7 @@ module.exports = {
     filename: '[name].bundle.js'
   },
   // devtool: 'inline-source-map',
+  // devtool: 'inline-cheap-module-source-map',
   devServer: {
     contentBase: './dist',
     port: 9090
@@ -29,7 +32,6 @@ module.exports = {
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
-      title: 'doSomething',
       template: './src/index.html'
     })
   ],

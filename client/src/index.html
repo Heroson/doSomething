@@ -2,18 +2,53 @@
 <html>
 <head>
   <meta charset="UTF-8">
-  <title>Document</title>
+  <title>doSomething</title>
 </head>
 <body>
-  <h1> HEX <==> RGB </h1>
-  <div>
-    <input class="rgbInput" type="text" maxlength="3">
-    <input class="rgbInput" type="text" maxlength="3">
-    <input class="rgbInput" type="text" maxlength="3">
-    <input id="hexInput" type="text" maxlength="7">
-  </div>
+  <div class="container">
+    <header class="jumbotron">
+      <h1>doSomething.</h1>
+    </header>
+    <aside class="g-sd">
+      <ul class="nav nav-tabs">
+        <li>
+          <a href="#color">颜色转换</a>
+        </li>
+        <li>
+          <a href="#todolist">任务清单</a>
+        </li>
+      </ul>
+      
+    </aside>
+    <main class="g-mn">
+      <section id="color">
+        <div>
+          <h2>转换为 HEX：</h2>
+          <input class="rgbInput" type="text" maxlength="3">
+          <input class="rgbInput" type="text" maxlength="3">
+          <input class="rgbInput" type="text" maxlength="3">
+          
+          <button id="rgb2hexBtn">转换</button>
+          <p id="hexValOutput"></p>
+          <span class="colorOutput" id="hexColorOutput"></span>
+        </div>
 
-  <button id="hex2rgbBtn">to RGB</button>
-  <button id="rgb2hexBtn">to Hex</button>
+        <div>
+          <h2>转换为 RGB：</h2>
+          <input id="hexInput" type="text" maxlength="7">
+
+          <button id="hex2rgbBtn">转换</button>
+          <p id="rgbValOutput"></p>
+          <span class="colorOutput" id="rgbColorOutput"></span>
+        </div>
+      </section>  
+    
+      <section id="todolist">
+        任务清单
+      </section>
+    </main>
+    
+    
+  </div>
 </body>
 </html>

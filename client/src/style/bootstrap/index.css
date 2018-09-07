@@ -1,0 +1,7 @@
+@import './jumbotron.css';
+@import './nav.css';
+
+.container{
+  padding-left: 15px;
+  padding-right: 15px;
+}

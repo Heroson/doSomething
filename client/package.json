@@ -4,7 +4,7 @@
   "description": "A client for doSomething.",
   "main": "index.js",
   "scripts": {
-    "start": "webpack-dev-server --open --mode=production"
+    "start": "webpack-dev-server --mode=production"
   },
   "author": "bytez",
   "license": "ISC",
