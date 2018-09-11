@@ -9,7 +9,7 @@ import './style/index.css'
   const hexValOutput = document.getElementById('hexValOutput') 
   const rgbColorOutput = document.getElementById('rgbColorOutput') 
   const hexColorOutput = document.getElementById('hexColorOutput')
-  const hexReg = /[0-9a-f]{2}(?=(?:[0-9a-f]{2,4})|$)/g
+  const hexReg = /[0-9a-fA-F]{2}(?=(?:[0-9a-fA-F]{2,4})|$)/g
   
   // 如果焦点在某一类输入框，则清空另一类的输入框
   // rgbInputs.forEach((input) => {
@@ -50,7 +50,7 @@ import './style/index.css'
       matchResult = matchResult.slice(0,3)
       matchResult.forEach((item, idx) => {
         let metricVal = parseInt(+('0x'+item), 10)
-        rgbInputs[idx].value = metricVal
+        // rgbInputs[idx].value = metricVal
         rgbResult.push(metricVal)
       })
       rgbValOutput.innerHTML = 'rgb(' + rgbResult.join(',') + ')'
